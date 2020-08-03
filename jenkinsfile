@@ -13,5 +13,8 @@ node{
      def gradleCMD = "${gradleHome}/bin/gradle"
      sh "${gradleCMD} clean build"
     }
-
+    
+ stage('playbook-execution') {   
+  sh label: '', script: 'ansible-playbook /opt/ansible/main.yml'
+  }
 }
